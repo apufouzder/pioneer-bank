@@ -22,8 +22,8 @@
             <button id="login" class="btn btn-success">Enter</button>
         </div>
     </div>
-    
     <div id="transaction-area">
+        <h1 class="text-center mb-5">Transaction Dashboard</h1>
         <div class="row">
             <div class="col-md-4">
                 <div class="deposit status">
@@ -74,11 +74,15 @@
             const transactionArea = document.getElementById("transaction-area");
             transactionArea.style.display = "block";
         })
-
         // deposit button event handler
         const depositBtn = document.getElementById("addDeposit");
         depositBtn.addEventListener("click", function () {
             const depositNumber = getInputNumber("depositAmount");
+
+            // const currentDeposit = document.getElementById("current-deposit").innerText;
+            // const currentDepositNumber = parseFloat(currentDeposit);
+            // const totalDeposit = depositNumber + currentDepositNumber;
+            // document.getElementById("current-deposit").innerText = totalDeposit;
 
             updateSpanText("current-deposit", depositNumber);
             updateSpanText("current-balance", depositNumber);
